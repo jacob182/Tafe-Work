@@ -37,6 +37,6 @@
 			//if product is not successfully added, create an error message to display on the add category page
 			$_SESSION['error'] = 'An error has occurred. Please try again.';
 			//redirect to category_add_form.php
-			header('location:../view/category_add_form.php');
+			header('location:../view/category.php');
 		}
 ?>

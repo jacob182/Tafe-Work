@@ -43,7 +43,10 @@
 			<label>Description* </label>
 			<textarea id="categoryDescription" name="categoryDescription" required /><?php echo $result['categoryDescription'] ?></textarea>
 		</div>
-
+		<div>
+			<!-- the table has a hidden form field to pass the productID to the next page -->
+			<input id="categoryID" name="categoryID" type="hidden" value="<?php echo $categoryID ?>" />
+		</div>
 		<div>
 			<input type="submit" value="Update Category" />
 		</div>
