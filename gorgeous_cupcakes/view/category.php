@@ -22,16 +22,16 @@
 
 	<?php
 		//call the get_category() function
-		$result = get_category();
+		$category = get_category();
 
 		//display the category name
-		echo "<h2>" . $result['categoryName'] . " cupcakes</h2>";
+		echo "<h2>" . $category['categoryName'] . " cupcakes</h2>";
 
 		//call the get_products() function
 		$result = get_products_by_category();
 	?>
 	<div class="categoryupdate">
-		<p><a href = "category_update_form.php?categoryID=<?php echo $row['categoryID']; ?>">Update</a> <span class="pink"> | </span><a href = "../controller/category_delete_process.php?categoryID=<?php echo $row['categoryID']; ?>" onclick="return confirm('Are you sure you want to delete this category?')">Delete</a></p>
+		<p><a href = "category_update_form.php?categoryID=<?php echo $category['categoryID']; ?>">Update</a> <span class="pink"> | </span><a href = "../controller/category_delete_process.php?categoryID=<?php echo $category['categoryID']; ?>" onclick="return confirm('Are you sure you want to delete this category?')">Delete</a></p>
 	</div> <!-- end productUpdate -->
 </div> <!-- end product -->
 	<!-- display all the product data in each row that belongs to the selected category using a foreach loop -->
