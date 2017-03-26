@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>A Project</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="..\css/style.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   </head>
   <body>
@@ -10,33 +10,57 @@
       <div class="wrapper">
         <div class="left">
           <a href="#" id='logo'>
-            <img src="images/logo.png" alt="Game Hub" width="150" height="40" />
+            <img src="..\images/logo.png" alt="Game Hub" width="150" height="40" />
           </a>
           <ul>
-            <li><a href="#">Explore</a></li>
+            <li><a href="..\index.html">Explore</a></li>
             <li><a href="#">Featured</a></li>
-            <li><a href="html\about.html">About Us</a></li>
-            <li><a href="html\profile.html">Profile</a></li>
+            <li><a href="..\html/about.html">About Us</a></li>
+            <li><a href="..\html/profile.html">Profile</a></li>
           </ul>
           <div id="clear"></div>
         </div>
 
         <div class="right">
           <ul>
-            <li><a href="html\login.html">Login</a></li>
-            <li id='signup'><a href="html\signup.html">Sign up</a></li>
+            <li><a href="#">Login</a></li>
+            <li id='signup'><a href="#">Sign up</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    --content
+      <h1>Login</h1>
 
+    <div class="login-container">
+
+      <div id="login">
+        <form action="" method="post">
+
+          <div class="field-wrap">
+            <label>
+              Email Address*
+            </label>
+            <input type="email"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Password*
+            </label>
+            <input type="password"/>
+          </div>
+          <button class="loginbtn"/>Log In</button>
+
+        </form>
+
+      </div>
+    </div>
     <footer>
       <div class="wrapper">
         <div class="left">
           <a href="#" id='footerLogo'>
-            <img src="images/logo.png" alt="Game Hub" width="150" height="40" />
+            <img src="..\images/logo.png" alt="Game Hub" width="150" height="40" />
           </a>
           <ul>
             <li><a href="#">Home · </a></li>
