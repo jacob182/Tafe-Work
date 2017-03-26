@@ -97,8 +97,9 @@ input, textarea {
     font-family: 'Montserrat', arial, sans-serif;
     text-transform: uppercase;
 }
-.loginbtn:hover{
+.loginbtn, .signupbtn:hover{
   background-color: #ffa31a;
+  cursor: pointer;
 }
 .profile-header{
   width: 1000px;
