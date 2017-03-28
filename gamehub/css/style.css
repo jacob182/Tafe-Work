@@ -4,13 +4,13 @@ body {
   font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: #ddd;
 }
-h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin-bottom: -30px}
+h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;}
 
 
 h2 { color: #111; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
 
 
-p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 24px; text-align: justify; text-justify: inter-word; }
+p { color: #685206; font-family: 'Helvetica Neue', sans-serif; font-size: 14px; text-align: justify; text-justify: inter-word; }
 
 nav {
   box-shadow:0 1px 1px #ccc;
@@ -59,6 +59,79 @@ nav .wrapper .left ul li a:hover, nav .wrapper .right ul li a:hover {
 #logo {float:left;}
 #clear {clear:both;}
 
+.wrapper{
+  width: 60%;
+  min-width: 1000px;
+  margin: 0 auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.block{
+  display: block;
+}
+.profile{
+  width: 25%;
+}
+
+.profile-box{
+  width: 80%;
+  margin: 0 auto;
+  background-color: #eee;
+}
+.description-user{
+  text-align: center;
+  font-weight: bold;
+  margin: 15px 0 15px ;
+}
+.feed{
+  background-color: #eee;
+  width: 75%;
+  border: 2px solid #eee;
+}
+.feed-item{
+  border: 2px solid #eee;
+}
+.feed-video{
+}
+.description-wrapper{
+border: 2px solid #eee;
+}
+.feed-user{
+  width: 20%;
+  float: left;
+}
+.feed-description{
+  width: 80%
+}
+
+.username-wrapper{
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+#user-image{
+  border-radius: 100px;
+  overflow: hidden;
+  width: 30%;
+  height: 60px;
+}
+.user-stats{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.user-stats div div {
+
+}
+#user-name{
+  width: 60%;
+  height: 60px;
+  text-align: left;
+  line-height: 60px;
+}
 input, textarea {
   display: block;
   outline: 0;
@@ -72,11 +145,12 @@ input, textarea {
   margin-bottom: 10px;
 }
 #login{
-  background-color: #ddd;
+  background-color: #fff;
   padding: 40px;
   width: 400px;
-  margin: 40px auto;
-  box-shadow: 0 4px 10px 4px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-shadow: 0 0px 5px rgba(0,0,0,0.5);
 }
 .login-container, .signup-container{
   overflow: hidden;
@@ -96,6 +170,9 @@ input, textarea {
     text-decoration: none;
     font-family: 'Montserrat', arial, sans-serif;
     text-transform: uppercase;
+}
+#slides{
+  width: 100%;
 }
 .loginbtn, .signupbtn:hover{
   background-color: #ffa31a;
@@ -118,6 +195,7 @@ input, textarea {
 }
 .profile-description{
 }
+
 footer {
   background:#292c2f;
   font: bold 16px arial;
