@@ -13,43 +13,33 @@
 <div class="login-container">
 
   <div id="login">
-    <form action="" method="post">
+    <form action="../controller/registration_process.php" method="post">
 
       <div class="field-wrap">
-        <label>
-          Username*
-        </label>
-        <input type="text"/>
+        <label> Username*</label>
+        <input type="text" id="username" name="username" placeholder="Enter username"/>
       </div>
 
       <div class="field-wrap">
-        <label>
-          Email Address*
-        </label>
-        <input type="email"/>
+        <label>Email Address*</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email*" required/>
       </div>
 
       <div class="field-wrap">
-        <label>
-          Confirm Email Address*
-        </label>
-        <input type="email"/>
+        <label>Confirm Email Address*</label>
+        <input type="email" id="email" name="email" placeholder="Confirm your email*" required/>
       </div>
 
       <div class="field-wrap">
-        <label>
-          Password*
-        </label>
-        <input type="password"/>
+        <label>Password*</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password*" required pattern=".{7,}"/>
       </div>
 
       <div class="field-wrap">
-        <label>
-          Confirm Password*
-        </label>
-        <input type="password"/>
+        <label>Confirm Password*</label>
+        <input type="password" id="password" name="password" placeholder="Confirm your password*" required pattern=".{7,}"/>
       </div>
-      <button class="signupbtn"/>Sign Up</button>
+      <button class="signupbtn" name="register"/>Sign Up</button>
 
     </form>
 
