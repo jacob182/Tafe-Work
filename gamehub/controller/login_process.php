@@ -20,7 +20,7 @@
 		if($count == 1)
 		{
 			//start the user session to allow authorised access to secured web pages
-			$_SESSION['member'] = $username;
+			$_SESSION['members'] = $username;
 			//if login is successful, create a success message to display on the products page
 			$_SESSION['success'] = 'Hello ' . $username ;
 			//redirect to products.php

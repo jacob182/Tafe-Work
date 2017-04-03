@@ -63,7 +63,7 @@
 		}
 
 		function isLogged() {
-		  if(isset($_SESSION['user'])) {
+		  if(isset($_SESSION['members'])) {
 		    return true;
 		  }
 		  return false;
