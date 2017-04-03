@@ -52,6 +52,7 @@
 		  $statement->execute();
 		  $result = $statement->fetchAll();
 		  $statement->closeCursor();
+			$count = $statement->rowCount();
 
 		  if($count > 0) {
 		    if(password_verify($password, $result[0]['password'])) {

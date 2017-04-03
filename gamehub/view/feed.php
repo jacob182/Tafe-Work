@@ -9,31 +9,42 @@
 ?>
 <div class="wrapper">
   <div class="profile">
-    <div class="profile-box">
-      <div class="username-wrapper">
-        <div id="user-image">
-          <img src="http://www.frackfeed.com/wp-content/uploads/2016/08/donaldtrump_fracking_meme.jpg" width="100%" height="100%">
-        </div>
-        <div id="user-name">
-          UserName
-        </div>
-      </div>
+		<?php
+		if(isLogged()) {
+			print('<div class="profile-box">
+	      <div class="username-wrapper">
+	        <div id="user-image">
+	          <img src="http://www.frackfeed.com/wp-content/uploads/2016/08/donaldtrump_fracking_meme.jpg" width="100%" height="100%">
+	        </div>
+	        <div id="user-name">
+					' . $_SESSION['user'] . '
 
-      <div class="user-stats">
-        <div>
-          <div>Videos</div></br>
-          <div>#</div>
-        </div>
-        <div>
-          <div>Followers</div></br>
-          <div>#</div>
+	        </div>
+	      </div>
+
+	      <div class="user-stats">
+	        <div>
+	          <div>Videos</div></br>
+	          <div>#</div>
+	        </div>
+	        <div>
+	          <div>Followers</div></br>
+	          <div>#</div>
+					</div>
+	        <div>
+						<div>Followed</div></br>
+	          <div>#</div>
+	        </div>
 				</div>
-        <div>
-					<div>Followed</div></br>
-          <div>#</div>
-        </div>
-			</div>
-		</div>
+			</div>');
+		} else {
+			print("<div class='signup-box'>
+							<h3> Welcome</br> Please login</h3>
+							<button class='profile-login'><a href='login.php'>Login</a></button>
+							</div>");
+		}
+		?>
+
 	</div>
 
   <div class ="feed">

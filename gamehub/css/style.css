@@ -75,10 +75,17 @@ nav .wrapper .left ul li a:hover, nav .wrapper .right ul li a:hover {
   width: 25%;
 }
 
-.profile-box{
+.profile-box, .signup-box{
   width: 80%;
   margin: 0 auto;
   background-color: #fff;
+}
+.signup-box{
+text-align: center;
+padding-top: 0.1px;
+padding-bottom: 20px;
+}
+.profile-signup{
 }
 .description-user{
   text-align: center;
@@ -158,6 +165,20 @@ input, textarea {
   width: 500px;
   padding: 20px 55px;
 }
+.profile-login{
+  display: inline-block;
+  border: 1px solid black;
+  color: #000;
+  border-radius: 3px;
+  background-color: #f90;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-family: 'Montserrat', arial, sans-serif;
+  text-transform: uppercase;
+}
 .loginbtn, .signupbtn{
     display: inline-block;
     border: 1px solid black;
@@ -174,7 +195,7 @@ input, textarea {
 #slides{
   width: 100%;
 }
-.loginbtn, .signupbtn:hover{
+.loginbtn:hover, .signupbtn:hover, .profile-login:hover{
   background-color: #ffa31a;
   cursor: pointer;
 }

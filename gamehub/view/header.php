@@ -20,7 +20,13 @@
             <li><a href="feed.php">Video Feed</a></li>
             <li><a href="#">Featured</a></li>
             <li><a href="about.php">About Us</a></li>
-            <li><a href="profile.php">Profile</a></li>
+            <?php
+            if(isLogged()) {
+              print("<li><a href='profile.php'>Profile</a></li>");
+            } else {
+              print("<li><a href='login.php'>Profile</a></li>");
+            }
+            ?>
           </ul>
           <div id="clear"></div>
         </div>
@@ -32,7 +38,7 @@
               <li><a href="login.php">Login</a></li>
               <?php
               if(isLogged()) {
-                print("<li id='logout'><a href='#'>Sign out</a></li>");
+                print("<li id='signout'><a href='signout.php'>Sign out</a></li>");
               } else {
                 print("<li id='signup'><a href='signup.php'>Sign up</a></li>");
               }

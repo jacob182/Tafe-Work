@@ -30,6 +30,4 @@
 		{
 			//if login not successful, create an error message to display on the login page
 			$_SESSION['error'] = 'Incorrect username or password. Please try again.';
-			//redirect to login.php
-			header('location:../view/login.php');
 		}
