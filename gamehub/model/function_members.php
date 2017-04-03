@@ -22,7 +22,7 @@
 		//values binded to the parameters
 		$statement->bindValue(':email', $email);
 		$statement->bindValue(':username', $username);
-		$statement->bindValue(':password', $password);
+		$statement->bindValue(':password', password_hash($password, PASSWORD_DEFAULT));
 		//database executes statement
 		$result = $statement->execute();
 		//some drivers require this function to create an efficient connection to the server
@@ -31,24 +31,10 @@
 		return $result;
 	}
 
-	function login($username, $password)
-		{
-			global $conn;
-			$sql = 'SELECT * FROM user WHERE username = :username AND password = :password';
-			$statement = $conn->prepare($sql);
-			$statement->bindValue(':username', $username);
-			$statement->bindValue(':password', $password);
-			$statement->execute();
-			$result = $statement->fetchAll();
-			$statement->closeCursor();
-			$count = $statement->rowCount();
-			return $count;
-		}
-
 		function retrieve_salt($username)
 		{
 			global $conn;
-			$sql = 'SELECT * FROM user WHERE username = :username';
+			$sql = 'SELECT * FROM members WHERE username = :username';
 			$statement = $conn->prepare($sql);
 			$statement->bindValue(':username', $username);
 			$statement->execute();
@@ -58,16 +44,28 @@
 		}
 
 		function login($username, $password)
-	{
-		global $conn;
-		$sql = 'SELECT * FROM user WHERE username = :username AND password = :password';
-		$statement = $conn->prepare($sql);
-		$statement->bindValue(':username', $username);
-		$statement->bindValue(':password', $password);
-		$statement->execute();
-		$result = $statement->fetchAll();
-		$statement->closeCursor();
-		$count = $statement->rowCount();
-		return $count;
-	}
+		{
+		  global $conn;
+		  $sql = 'SELECT `password` FROM members WHERE username = :username';
+		  $statement = $conn->prepare($sql);
+		  $statement->bindValue(':username', $username);
+		  $statement->execute();
+		  $result = $statement->fetchAll();
+		  $statement->closeCursor();
+
+		  if($count > 0) {
+		    if(password_verify($password, $result[0]['password'])) {
+					$_SESSION['user'] = $username;
+		      return $count;
+		    }
+		  }
+		  return 0;
+		}
+
+		function isLogged() {
+		  if(isset($_SESSION['user'])) {
+		    return true;
+		  }
+		  return false;
+		}
 		?>

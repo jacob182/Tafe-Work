@@ -2,9 +2,9 @@
 	//start session management
 	session_start();
 	//connect to the database
-	require('../model\database.php');
+	require('../model/database.php');
 	//retrieve the functions
-	require('../model\function_members.php');
+	require('../model/function_members.php');
 ?>
 
 <?php

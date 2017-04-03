@@ -13,12 +13,12 @@
   <div id="login">
     <form action="../controller/login_process.php" method="post">
       <div class="field-wrap">
-        <label>Email Address*</label>
-        <input type="email" id="email" placeholder="Enter your email*"/>
+        <label>Username*</label>
+        <input type="text" name="username" id="username" placeholder="Enter your username*"/>
       </div>
       <div class="field-wrap">
         <label>Password*</label>
-        <input type="password" id="password" placeholder="Enter your password*" required/>
+        <input type="password" name="password" id="password" placeholder="Enter your password*" required/>
       </div>
       <button class="loginbtn"/>Log In</button>
     </form>

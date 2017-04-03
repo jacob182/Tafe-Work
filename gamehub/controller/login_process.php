@@ -4,7 +4,7 @@
 	//connect to the database
 	require('../model/database.php');
 	//retrieve the functions
-	require('../model/functions_members.php');
+	require('../model/function_members.php');
 
 	//retrieve the username and password entered into the form
 	$username = $_POST['username'];
@@ -31,5 +31,5 @@
 			//if login not successful, create an error message to display on the login page
 			$_SESSION['error'] = 'Incorrect username or password. Please try again.';
 			//redirect to login.php
-			header('location:../view/login_form.php');
+			header('location:../view/login.php');
 		}
