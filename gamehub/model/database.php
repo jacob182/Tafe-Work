@@ -20,4 +20,6 @@
 		include('../view/database_error.php');
 		exit();
 	}
+
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>

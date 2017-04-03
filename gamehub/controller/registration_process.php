@@ -60,8 +60,8 @@ $count = count_username($username);
     	{
     		//if product is not successfully added, create an error message
     		$_SESSION['error'] = 'An error has occurred. Please try again.';
-				type var_dump($result);
+				var_dump($result);
     		//redirect to product_add_form.php
-    		header('location:../view/signup.php');
+    		//header('location:../view/signup.php');
     	}
     ?>

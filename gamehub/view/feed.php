@@ -2,7 +2,7 @@
 	//start session management
 	session_start();
 	//provide the value of the $title variable for this page
-	$title = "Explore";
+	$title = "feed";
 
 	//retrieve the header
 	require('header.php');
@@ -15,7 +15,7 @@
           <img src="http://www.frackfeed.com/wp-content/uploads/2016/08/donaldtrump_fracking_meme.jpg" width="100%" height="100%">
         </div>
         <div id="user-name">
-          Wanker
+          UserName
         </div>
       </div>
 

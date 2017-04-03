@@ -1,4 +1,4 @@
 
 <?php
-	header('location: view/explore.php');
+	header('location: view/feed.php');
 ?>

@@ -13,10 +13,10 @@
 		return $count;
 	}
 
-	function add_member($email, $userName, $password)
+	function add_member($email, $username, $password)
 	{
 		global $conn;
-		$sql = "INSERT INTO user (email, username, password) VALUES (:email, :username, :password)";
+		$sql = "INSERT INTO members (email, username, password) VALUES (:email, :username, :password)";
 		//use a prepared statement to enhance security
 		$statement = $conn->prepare($sql);
 		//values binded to the parameters
@@ -30,3 +30,44 @@
 		//result is returned to the database
 		return $result;
 	}
+
+	function login($username, $password)
+		{
+			global $conn;
+			$sql = 'SELECT * FROM user WHERE username = :username AND password = :password';
+			$statement = $conn->prepare($sql);
+			$statement->bindValue(':username', $username);
+			$statement->bindValue(':password', $password);
+			$statement->execute();
+			$result = $statement->fetchAll();
+			$statement->closeCursor();
+			$count = $statement->rowCount();
+			return $count;
+		}
+
+		function retrieve_salt($username)
+		{
+			global $conn;
+			$sql = 'SELECT * FROM user WHERE username = :username';
+			$statement = $conn->prepare($sql);
+			$statement->bindValue(':username', $username);
+			$statement->execute();
+			$result = $statement->fetch();
+			$statement->closeCursor();
+			return $result;
+		}
+
+		function login($username, $password)
+	{
+		global $conn;
+		$sql = 'SELECT * FROM user WHERE username = :username AND password = :password';
+		$statement = $conn->prepare($sql);
+		$statement->bindValue(':username', $username);
+		$statement->bindValue(':password', $password);
+		$statement->execute();
+		$result = $statement->fetchAll();
+		$statement->closeCursor();
+		$count = $statement->rowCount();
+		return $count;
+	}
+		?>

@@ -13,7 +13,7 @@
             <img src="../images/logo.png" alt="Game Hub" width="150" height="40" />
           </a>
           <ul>
-            <li><a href="explore.php">Explore</a></li>
+            <li><a href="feed.php">Video Feed</a></li>
             <li><a href="#">Featured</a></li>
             <li><a href="about.php">About Us</a></li>
             <li><a href="profile.php">Profile</a></li>
