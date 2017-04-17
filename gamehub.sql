@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2017 at 05:11 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: Apr 17, 2017 at 04:20 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -39,13 +39,21 @@ CREATE TABLE `categories` (
 --
 
 CREATE TABLE `members` (
-  `Client_ID` int(11) UNSIGNED NOT NULL,
-  `Email` varchar(100) NOT NULL,
   `Username` varchar(10) NOT NULL,
-  `Password` varchar(20) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Password` varchar(255) NOT NULL,
+  `salt` varchar(256) NOT NULL,
+  `ClientImage` varchar(255) NOT NULL,
   `Description` varchar(150) DEFAULT NULL,
   `Admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`Username`, `Email`, `Password`, `salt`, `ClientImage`, `Description`, `Admin`) VALUES
+('link182', 'jacobcoorey@gmail.com', 'e7da7a5e45cdb24356721983e6aa6fc74fef63d86d1e866ac10263a1335c67ea', '8586e40254e670dd69c5309ec3b926b1', '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -55,7 +63,7 @@ CREATE TABLE `members` (
 
 CREATE TABLE `posts` (
   `Post_ID` int(11) NOT NULL,
-  `Client_ID` int(11) NOT NULL,
+  `Username` varchar(10) NOT NULL,
   `Cat_ID` int(11) NOT NULL,
   `Post_date` datetime NOT NULL,
   `Post_description` varchar(150) DEFAULT NULL
@@ -69,7 +77,7 @@ CREATE TABLE `posts` (
 
 CREATE TABLE `sessions` (
   `Session_ID` int(11) NOT NULL,
-  `Client_ID` int(11) NOT NULL,
+  `Username` varchar(10) NOT NULL,
   `Logged_in` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -87,7 +95,7 @@ ALTER TABLE `categories`
 -- Indexes for table `members`
 --
 ALTER TABLE `members`
-  ADD PRIMARY KEY (`Client_ID`);
+  ADD PRIMARY KEY (`Username`);
 
 --
 -- Indexes for table `posts`
@@ -110,11 +118,6 @@ ALTER TABLE `sessions`
 --
 ALTER TABLE `categories`
   MODIFY `Cat_ID` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `members`
---
-ALTER TABLE `members`
-  MODIFY `Client_ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts`
 --

@@ -1,14 +1,14 @@
 <html>
   <head>
     <title><?php echo $title ?></title>
-    <link rel="stylesheet" type="text/css" href="../css\style.css" />
-    <script type="text/javascript" src="..\js/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../js/scripts.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   </head>
   <body>
 
     <?php
-      require('../model\function_members.php')
+      require('../model/function_members.php')
     ?>
     <nav>
       <div class="wrapper">

@@ -12,6 +12,8 @@
 
 	//call the retrieve_salt() function
 	$result = retrieve_salt($username);
+	$salt = $result['salt'];
+	$password = hash('sha256', $password.$salt);
 
 	//call the login() function
 		$count = login($username, $password);
@@ -20,7 +22,7 @@
 		if($count == 1)
 		{
 			//start the user session to allow authorised access to secured web pages
-			$_SESSION['members'] = $username;
+			$_SESSION['user'] = $username;
 			//if login is successful, create a success message to display on the products page
 			$_SESSION['success'] = 'Hello ' . $username ;
 			//redirect to products.php
@@ -30,4 +32,5 @@
 		{
 			//if login not successful, create an error message to display on the login page
 			$_SESSION['error'] = 'Incorrect username or password. Please try again.';
+			header('location:../view/login.php');
 		}

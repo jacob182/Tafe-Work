@@ -44,9 +44,13 @@ $count = count_username($username);
   		header("location:../view/signup.php");
   		exit();
   	}
+		//generate a random salt value using the MD5 encryption method and the PHP uniqid() and rand() functions
+		    $salt = md5(uniqid(rand(), true));
+		    //encrypt the password (with the concatenated salt) using the SHA256 encryption method and the PHP hash() function
+		    $password = hash('sha256', $password.$salt); //generate the hashed password with the salt value
 
     //call the add_user() function
-    	$result = add_member($email, $username, $password);
+    	$result = add_member($email, $username, $password, $salt);
 
     	//create user messages
     	if($result)
@@ -61,7 +65,7 @@ $count = count_username($username);
     		//if product is not successfully added, create an error message
     		$_SESSION['error'] = 'An error has occurred. Please try again.';
 				var_dump($result);
-    		//redirect to product_add_form.php
-    		//header('location:../view/signup.php');
+    		//redirect to signup.php
+    		header('location:../view/signup.php');
     	}
     ?>

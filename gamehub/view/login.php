@@ -10,6 +10,13 @@
 ?>
 <h1>Log In</h1>
 <div class="login-container">
+	<?php
+	if(isset($_SESSION['error']))
+		print($_SESSION['error']);
+
+	elseif(isset($_SESSION['success']))
+		print($_SESSION['success']);
+	 ?>
   <div id="login">
     <form action="../controller/login_process.php" method="post">
       <div class="field-wrap">
