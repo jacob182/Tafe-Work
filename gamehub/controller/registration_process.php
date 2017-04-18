@@ -10,6 +10,8 @@
 <?php
 	//retrieve the registration details into the form
   $username = $_POST['username'];
+	$confirmemail = $_POST['confirm-email'];
+	$confirmpassword = $_POST['confirm-password'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
@@ -29,6 +31,20 @@ elseif (empty($email) || empty($username) || empty($password))
 	exit();
 }
 
+elseif ($email != $confirmemail)
+{
+	$_SESSION['error'] = 'Please enter the same email address.';
+	header("location:../view/signup.php");
+	exit();
+}
+
+elseif ($password != $confirmpassword)
+{
+
+$_SESSION['error'] = 'Please enter the same password.';
+header("location:../view/signup.php");
+exit();
+}
 elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
   {
   	$_SESSION['error'] = 'Please enter a valid email address.';
@@ -45,12 +61,10 @@ $count = count_username($username);
   		exit();
   	}
 		//generate a random salt value using the MD5 encryption method and the PHP uniqid() and rand() functions
-		    $salt = md5(uniqid(rand(), true));
-		    //encrypt the password (with the concatenated salt) using the SHA256 encryption method and the PHP hash() function
-		    $password = hash('sha256', $password.$salt); //generate the hashed password with the salt value
+				$password = password_hash($password, PASSWORD_DEFAULT);
 
     //call the add_user() function
-    	$result = add_member($email, $username, $password, $salt);
+    	$result = add_member($email, $username, $password);
 
     	//create user messages
     	if($result)

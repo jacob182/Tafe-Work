@@ -12,6 +12,8 @@
   $username = $_POST['username'];
   $email = $_POST['email'];
   $password = $_POST['password'];
+  $newpassword = $_POST['new-password'];
+  $confirmnewpassword = $_POST['confirm-new-password'];
 
 
   if (empty($email))
@@ -20,8 +22,14 @@
     header("location:../view/edit_profile.php");
     exit();
   }
-
+  elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
+    	$_SESSION['error'] = 'Please enter a valid email address.';
+    	header("location:../view/edit_profile.php");
+      exit();
+    }
   else {
+  if(empty($password, $newpassword, $confirmnewpassword))
   $result = edit_profile($email, $username);
     if($result) {
       $_SESSION['success'] = 'profile successfully updated';

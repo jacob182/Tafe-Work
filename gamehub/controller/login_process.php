@@ -11,9 +11,7 @@
 	$password = $_POST['password'];
 
 	//call the retrieve_salt() function
-	$result = retrieve_salt($username);
-	$salt = $result['salt'];
-	$password = hash('sha256', $password.$salt);
+
 
 	//call the login() function
 		$count = login($username, $password);

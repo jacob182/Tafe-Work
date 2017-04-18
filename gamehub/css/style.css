@@ -282,6 +282,11 @@ div.profile-stats li span {
   margin-left: 5px;
   font-weight: bold;
 }
+#edit-password{
+  float: right;
+  width: 90%;
+  display: none;
+}
 footer {
   background:#292c2f;
   font: bold 16px arial;

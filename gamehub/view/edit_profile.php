@@ -19,13 +19,28 @@
 
 		<div class="field-wrap">
 			<label class="edit-profile-heading" for="edit-email">Email</label>
-		   <input class="edit-email-input" id="edit-email" name="email" type="text" value="<?php echo $result['Email'] ?>">
+		   <input class="edit-input" id="edit-email" name="email" type="text" value="<?php echo $result['Email'] ?>">
 		</div>
 		<div class="field-wrap">
 		  <label class="edit-profile-heading">Password</label>
-			<input class="edit-email-input" id="edit-password" name="password" type="text" value="<?php echo $_SESSION['user'] ?>">
+			<button class="newpasswordbtn" id="editPasswordbtn" onclick="return edit_password()">Edit Password</button>
 		</div>
-		<button class="profilebtn"/>Save Changes</button>
+		<div id="edit-password">
+			<div class="field-wrap">
+			  <label class="edit-profile-heading">Current Password</label>
+				<input id="password" name="password" type="text">
+			</div>
+			<div class="field-wrap">
+			  <label class="edit-profile-heading">New Password</label>
+				<input  id="new-password" name="newpassword" type="password">
+			</div>
+			<div class="field-wrap">
+			  <label class="edit-profile-heading">Confirm New Password</label>
+				<input  id="confirm-new-password" name="confirmnewpassword" type="password">
+			</div>
+		</div>
+	<div style="clear:both"></div>
+		<input type="submit" class="profilebtn" value="Save Changes" />
 	</form>
 
 </div>
