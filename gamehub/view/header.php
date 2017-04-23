@@ -35,12 +35,11 @@
 
         <div class="right">
           <ul>
-              <li><a href="login.php">Login</a></li>
               <?php
               if(isLogged()) {
-                print("<li id='signout'><a href='signout.php'>Sign out</a></li>");
+                print("<li id='signup'><a href='signout.php'>Sign out</a></li>");
               } else {
-                print("<li id='signup'><a href='signup.php'>Sign up</a></li>");
+                print("<li><a href='login.php'>Login</a></li><li id='signup'><a href='signup.php'>Sign up</a></li>");
               }
               ?>
           </ul>

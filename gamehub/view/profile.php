@@ -7,6 +7,8 @@
 
 	//retrieve the header
 	require('header.php');
+
+
 ?>
 
 <div class="profile-header">
@@ -24,6 +26,12 @@
 
 </div>
 
+<div class="wrapper">
+<form action"upload_process.php" method="post" enctype="multipart/form-data">
+	<input class="choose-file" type="file" name="file"/>
+	<input class="submit-file" type="submit" name="submit" value="upload"/>
+</form>
+</div>
   <?php
     //retrieve the footer
     require('footer.php');

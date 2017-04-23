@@ -13,4 +13,18 @@ function carousel() {
     x[myIndex-1].style.display = "block";
     setTimeout(carousel, 3000);
 }
+};
+
+function edit_password() {
+  var toggler = document.getElementById('edit-password');
+  if(toggler.style.display == 'block') {
+    document.getElementById('editPasswordbtn').innerHTML="Edit Password";
+    toggler.style.display="none";
+  } else {
+    toggler.style.display="block";
+    document.getElementById('editPasswordbtn').innerHTML="Hide";
+  }
+
+  return false;
+
 }

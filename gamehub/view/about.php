@@ -21,7 +21,43 @@
     <h1>About Us</h1>
   </div>
 </div>
+<div class="wrapper">
+	<div class="about-container">
+		<div class="third-container">
+	  	<h2>Our Vision</h2>
 
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+		</div>
+		<div class="third-container">
+	  	<h2>Our Belief</h2>
+
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+		</div>
+		<div class="third-container">
+	  	<h2>Our Gaming</h2>
+
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+			</br>
+			<p> SICK DESCRIPTION WHERE CAN I GET ONE</p>
+		</div>
+	</div>
+</div>
   <?php
     //retrieve the footer
     require('footer.php');

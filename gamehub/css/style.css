@@ -203,7 +203,12 @@ input, textarea {
   background-color: #ffa31a;
   cursor: pointer;
 }
-
+.choose-file{
+  width:100%;
+}
+.submit-file{
+  width:100%;
+}
 .profile-header{
   box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
   background-color: #efefef;
@@ -281,6 +286,31 @@ div.profile-stats li span {
 .edit-username{
   margin-left: 5px;
   font-weight: bold;
+}
+#edit-password{
+  float: right;
+  width: 90%;
+  display: none;
+}
+.about-container{
+width: 100%;
+padding: 0 8px;
+}
+.third-container{
+  float: left;
+  width: 33.33333%;
+}
+.third-container p{
+  text-align: center;
+}
+.third-container h2{
+  color: #111;
+font-family: 'Open Sans', sans-serif;
+font-size: 30px;
+font-weight: 300;
+margin:0 0 10px;
+line-height: 32px;
+text-align: center;
 }
 footer {
   background:#292c2f;
@@ -369,6 +399,9 @@ footer .wrapper .right form input[type='submit'] {
 @media all and (max-width:725px) {
   nav .wrapper .right {
     display:none;
+  }
+  .third-container{
+    width: 100%;
   }
 }
 

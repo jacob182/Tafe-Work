@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2017 at 04:20 PM
+-- Generation Time: Apr 23, 2017 at 02:26 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -42,7 +42,6 @@ CREATE TABLE `members` (
   `Username` varchar(10) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `Password` varchar(255) NOT NULL,
-  `salt` varchar(256) NOT NULL,
   `ClientImage` varchar(255) NOT NULL,
   `Description` varchar(150) DEFAULT NULL,
   `Admin` tinyint(1) NOT NULL
@@ -52,8 +51,8 @@ CREATE TABLE `members` (
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`Username`, `Email`, `Password`, `salt`, `ClientImage`, `Description`, `Admin`) VALUES
-('link182', 'jacobcoorey@gmail.com', 'e7da7a5e45cdb24356721983e6aa6fc74fef63d86d1e866ac10263a1335c67ea', '8586e40254e670dd69c5309ec3b926b1', '', NULL, 0);
+INSERT INTO `members` (`Username`, `Email`, `Password`, `ClientImage`, `Description`, `Admin`) VALUES
+('link182', 'jacobcoorey@gmail.com', '$2y$10$uGNiGzxUNiIhEMIOiO3Wlu0QH/xBY7FuGKl.MkZ1.BywbydXobXZ.', '', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -79,6 +78,18 @@ CREATE TABLE `sessions` (
   `Session_ID` int(11) NOT NULL,
   `Username` varchar(10) NOT NULL,
   `Logged_in` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `videos`
+--
+
+CREATE TABLE `videos` (
+  `Vid_ID` int(11) NOT NULL,
+  `Vid_Name` varchar(30) NOT NULL,
+  `Vid_url` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -110,6 +121,12 @@ ALTER TABLE `sessions`
   ADD PRIMARY KEY (`Session_ID`);
 
 --
+-- Indexes for table `videos`
+--
+ALTER TABLE `videos`
+  ADD PRIMARY KEY (`Vid_ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -128,6 +145,11 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `sessions`
   MODIFY `Session_ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `videos`
+--
+ALTER TABLE `videos`
+  MODIFY `Vid_ID` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
