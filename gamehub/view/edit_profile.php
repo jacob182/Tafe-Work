@@ -28,7 +28,7 @@
 		<div id="edit-password">
 			<div class="field-wrap">
 			  <label class="edit-profile-heading">Current Password</label>
-<<<<<<< HEAD
+
 				<input id="old-password" name="oldPassword" type="text">
 			</div>
 			<div class="field-wrap">
@@ -38,7 +38,7 @@
 			<div class="field-wrap">
 			  <label class="edit-profile-heading">Confirm New Password</label>
 				<input  id="confirm-new-password" name="confirmNewPassword" type="password">
-=======
+
 				<input id="password" name="password" type="text">
 			</div>
 			<div class="field-wrap">
@@ -48,17 +48,14 @@
 			<div class="field-wrap">
 			  <label class="edit-profile-heading">Confirm New Password</label>
 				<input  id="confirm-new-password" name="confirmnewpassword" type="password">
->>>>>>> origin/master
+
 			</div>
 		</div>
 	<div style="clear:both"></div>
 		<input type="submit" class="profilebtn" value="Save Changes" />
-<<<<<<< HEAD
 	</form>
 	<form method="POST" action="delete_account_process.php">
 		<input class="profilebtn" type="submit" onclick="confirm('Are you sure you want to delete your account?');" name="delete" value="Delete Account" value="1" />
-=======
->>>>>>> origin/master
 	</form>
 </div>
 <?php

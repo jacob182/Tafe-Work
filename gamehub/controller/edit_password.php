@@ -37,7 +37,7 @@
 }
 
 ?>
-=======
+
 <?php
     //start session management
     session_start();
@@ -76,4 +76,3 @@
 }
 
 ?>
->>>>>>> origin/master

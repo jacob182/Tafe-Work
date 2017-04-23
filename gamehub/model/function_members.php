@@ -91,11 +91,11 @@
 		return $result;
 	}
 
-<<<<<<< HEAD
+
 	function edit_password($oldPassword, $newPassword, $confirmNewPassword)
-=======
+
 	function edit_password()
->>>>>>> origin/master
+
 	{
 		global $conn;
 	   $sql = 'SELECT password FROM members WHERE username = :username';
@@ -104,7 +104,7 @@
 	  $statement->execute();
 	  $result = $statement->fetchAll();
 	  $statement->closeCursor();
-<<<<<<< HEAD
+
 		if (password_verify($oldPassword, $result[0]['password'])) {
 			if($newPassword == $confirmNewPassword) {
 				$sql = "UPDATE members SET password = :password WHERE username = :username";
@@ -122,7 +122,7 @@
 		} else {
 			$_SESSION['error'] = 'Current Password incorrect!';
 		}
-=======
+
 		if (password_verify($password, $result[0]['password'])) {
 			//current password is correct
 			$sql = "UPDATE members SET password = :password WHERE username = :username";
@@ -136,7 +136,7 @@
 		}
 
 	  return $count;
->>>>>>> origin/master
+
 	}
 
 		function delete_profile()
