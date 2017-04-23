@@ -13,9 +13,15 @@
     //retrieve the  details into the form
   $username = $_POST['username'];
   $email = $_POST['email'];
+<<<<<<< HEAD
   $oldPassword = $_POST['oldPassword'];
   $newPassword = $_POST['newPassword'];
   $confirmNewPassword = $_POST['confirmNewPassword'];
+=======
+  $password = $_POST['password'];
+  $newpassword = $_POST['new-password'];
+  $confirmnewpassword = $_POST['confirm-new-password'];
+>>>>>>> origin/master
 
 
   if (empty($email))
@@ -31,6 +37,7 @@
       exit();
     }
   else {
+<<<<<<< HEAD
     $message = "Profile ";
     $result = edit_profile($email, $username);
       if($result) {
@@ -38,6 +45,13 @@
       }
     if(!empty($oldPassword) && !empty($newPassword) && !empty($confirmNewPassword)) {
     edit_password($oldPassword, $newPassword, $confirmNewPassword);
+=======
+  if(empty($password, $newpassword, $confirmnewpassword))
+  $result = edit_profile($email, $username);
+    if($result) {
+      $_SESSION['success'] = 'profile successfully updated';
+      header("location:../view/edit_profile.php");
+>>>>>>> origin/master
     }
 
   header("location:../view/edit_profile.php");
