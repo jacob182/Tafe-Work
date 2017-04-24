@@ -50,7 +50,7 @@
   <div class ="feed">
     <div class="feed-item">
       <div class="feed-video">
-        <video src="../videos\720.mp4" width="100%"></video>
+        <video src="../videos/720.mp4" width="100%"></video>
       </div>
       <div class="description-wrapper">
         <div class="feed-user">

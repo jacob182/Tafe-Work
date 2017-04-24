@@ -93,9 +93,6 @@
 
 
 	function edit_password($oldPassword, $newPassword, $confirmNewPassword)
-
-	function edit_password()
-
 	{
 		global $conn;
 	   $sql = 'SELECT password FROM members WHERE username = :username';

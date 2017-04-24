@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2017 at 02:30 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Generation Time: Apr 23, 2017 at 02:26 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -89,16 +89,8 @@ CREATE TABLE `sessions` (
 CREATE TABLE `videos` (
   `Vid_ID` int(11) NOT NULL,
   `Vid_Name` varchar(30) NOT NULL,
-  `Vid_url` varchar(100) NOT NULL,
-  `date_added` int(11) NOT NULL
+  `Vid_url` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `videos`
---
-
-INSERT INTO `videos` (`Vid_ID`, `Vid_Name`, `Vid_url`, `date_added`) VALUES
-(11, '720.mp4', 'videos/uploads/MjcxNjY5.mp4', 1492992750);
 
 --
 -- Indexes for dumped tables
@@ -157,7 +149,7 @@ ALTER TABLE `sessions`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `Vid_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Vid_ID` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

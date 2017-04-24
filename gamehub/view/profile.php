@@ -27,12 +27,13 @@
 </div>
 
 <div class="wrapper">
-<form action"upload_process.php" method="post" enctype="multipart/form-data">
+<form action="../controller/upload_process.php" method="post" enctype="multipart/form-data">
 	<input class="choose-file" type="file" name="file"/>
 	<input class="submit-file" type="submit" name="submit" value="upload"/>
 </form>
 </div>
   <?php
+	print(date('d/m', 1492990127));
     //retrieve the footer
     require('footer.php');
   ?>
